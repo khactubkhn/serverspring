@@ -76,12 +76,14 @@ public class LoginController {
         return result;
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/info", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     Map<String, ? extends Object> get(HttpServletRequest request){
         Map<String, Object> result = new HashMap<>();
         User user = (User) request.getAttribute("user");
         result.put("username", user.getUsername());
+        result.put("lastName", user.getUsername());
+        result.put("firstName", user.getUsername());
         return result;
     }
 
